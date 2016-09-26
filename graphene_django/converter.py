@@ -57,7 +57,7 @@ def convert_django_field(field, registry=None):
         "Don't know how to convert the Django field %s (%s)" %
         (field, field.__class__))
 
-
+@convert_django_field.register(models.DurationField)
 @convert_django_field.register(models.CharField)
 @convert_django_field.register(models.TextField)
 @convert_django_field.register(models.EmailField)
